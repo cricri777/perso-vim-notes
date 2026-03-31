@@ -1,20 +1,37 @@
 # Apprendre Vim
-Vim est un editeur de texte amélioré de Vi, l'editeur de texte classique de Unix.
+Vim est un editeur de texte amélioré de Vi, open source, l'editeur de texte classique de Unix (1992).
 
 ![vim-meme](./docs/images/vim_meme.jpg)
 
+## Prerequis
+- Touch typing
+- IDE: vim plugin
+
+## Avantages
+- Vitesse d'execution dans l'edition de code
+- Navigation sans souris
+- Personalisation
+- Light Weight, Performant
+
+## Inconvenients
+- Courbe d'apprentissage
+- Configuration chronophage
+- Moins adapté aux IDE moderne
+
+Question: Est-ce que ca vaut le coup d'apprendre Vim ?
+
+
 # Les Modes
-- Normal: escape
-- Insert: i
+- Normal: Escape (defaut)
+- Insert: i/a
 - Visual
 - Select
 - Command line
 - Replace
 - Operator-pending
 
+
 ## Normal mode (default)
-### escape = normal mode
-### Navigation: hjkl
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id rutrum nisl. Nam mattis, elit vitae congue aliquet, odio ex suscipit dui, id mollis diam odio eget lacus. Integer ultricies sapien nec ante egestas, non eleifend mauris suscipit. Donec imperdiet nulla enim, id ultrices neque consectetur porta. Donec cursus sollicitudin risus a porta. Phasellus neque ipsum, condimentum id massa a, efficitur bibendum ligula. Fusce pellentesque, ante nec fringilla tincidunt, ligula mi faucibus eros, non facilisis ipsum dolor id elit. Duis vestibulum odio sed justo maximus vehicula. In eu pulvinar enim. In consequat odio quis tortor tincidunt porta.
 Aliquam in porta turpis, sed blandit orci. Mauris quis nisi tempor, convallis lacus quis, luctus diam. Nulla nibh erat, interdum id risus id, pharetra feugiat dolor. Morbi vestibulum odio sed tortor ultricies, vel molestie nisi pretium. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis sapien at enim congue egestas in sit amet sapien. Nunc at eros sapien.
 Suspendisse dignissim est ut arcu placerat euismod. Vestibulum in nulla tellus. Aenean elementum non enim a ultrices. In hac habitasse platea dictumst. Ut eu libero orci. Etiam ac dui id quam bibendum dictum et id erat. Nunc arcu nisl, finibus a accumsan tincidunt, mollis et nulla. Sed ut ipsum id mi luctus laoreet tristique vel ante. In id libero vehicula nisl pellentesque condimentum nec et mi. Ut id fringilla justo. Phasellus tempor, nisl id malesuada congue, turpis urna scelerisque ligula, convallis rutrum metus dolor ac erat. Nunc convallis risus ex, sit amet dapibus risus maximus a. Proin pulvinar a erat vitae facilisis.
@@ -22,6 +39,60 @@ Morbi sit amet luctus turpis. In vitae blandit tortor. Phasellus justo tellus, v
 Proin nec tortor vitae lorem tempus pellentesque. Curabitur consequat, turpis sed tempus lobortis, nibh ipsum finibus magna, at dictum sapien nisl vitae ipsum. Nam vel tortor metus. Aenean iaculis tortor sit amet arcu tempus pulvinar. Aliquam faucibus dignissim scelerisque. Aenean luctus ipsum at felis lobortis, accumsan porta justo dignissim. Cras viverra dapibus est vitae mollis. Aliquam a eleifend nisi. Maecenas est magna, aliquet vel justo non, fermentum dapibus est. Duis eu vestibulum felis, hendrerit lobortis turpis. Maecenas tincidunt ultricies augue id vulputate. Quisque sed ex vel dolor faucibus finibus a eget enim. Cras in leo aliquam, fermentum libero non, molestie libero. Etiam at scelerisque enim. Proin faucibus scelerisque lectus, a dignissim felis consectetur iaculis.
 
 
-### Undo: u
-### Redo: <C-r>
-### Supprimer un character: x
+### Bases:
+- Navigation: hjkl
+- Normal mode: escape
+- Insert mode: i/a
+- Undo: u
+- Redo: <C-r>
+- Replace: r
+- Supprimer un character: x
+- delete a line: dd
+- copy a line: yy -> paste: p
+
+
+### Bases: Vim Motion
+- Word: w/W, b/B
+- End of word: e/E, ge/gE
+- Begin of line: 0
+- End of line: $
+- Begin of first letter: ^
+- Go to first line: gg
+- Go to last line: G
+- Go to a line: <line>G
+- Move to the next occurrence of <char> on the line: f<char>
+    - navigate to next: ;/,
+- search a pattern: /<pattern>
+    - navigate to next/prev: n/N
+
+- jump matching: %
+```java
+public class HelloWorld {
+    public static void main(String [] args) {
+        System.out.println("Hello WOrld!");
+    }
+}
+```
+
+### Vim Action
+Action = Motion + Operator
+
+### Bases: Vim Operator
+- Delete: d
+- Yank (copy): y
+- Change (copy): c
+- Upper case: gU
+- Lower case: gu
+
+### Vim text object
+Operate on blocks
+
+Example:
+- delete around word: daw/daW
+- change inside parenthesis: ci(
+- change inside double quotes: ci"
+- visual select around paragraph: vap
+
+
+## Insert Mode
+
