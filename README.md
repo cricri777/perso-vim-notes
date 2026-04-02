@@ -1,27 +1,32 @@
-# Apprendre Vim
-Vim est un editeur de texte amélioré de Vi, open source, l'editeur de texte classique de Unix (1992).
+# Learn Vim
+
+## Getting Started
+- Vim is an open-source, improved text editor for Vi.
+- The classic Unix text editor.
+- Development of Vim started in 1988
+- First release in 1992.
 
 ![vim-meme](./docs/images/vim_meme.jpg)
 
-## Prerequis
+## Prequisites
 - Touch typing
 - IDE: vim plugin
 
-## Avantages
-- Vitesse d'execution dans l'edition de code
-- Navigation sans souris
-- Personalisation
+## Pros
+- Code editing faster
+- Navigation without mouse
+- Customization
 - Light Weight, Performant
 
-## Inconvenients
+## Cons
 - Courbe d'apprentissage
-- Configuration chronophage
-- Moins adapté aux IDE moderne
+- Hard to configure
+- Can not cover all Modern IDE feature
 
-Question: Est-ce que ca vaut le coup d'apprendre Vim ?
+Question: Is it worth learning Vim ?
 
 
-# Les Modes
+# Modes
 - Normal: Escape (defaut)
 - Insert: i/a
 - Visual
@@ -30,8 +35,8 @@ Question: Est-ce que ca vaut le coup d'apprendre Vim ?
 - Replace
 - Operator-pending
 
-
 ## Normal mode (default)
+### Text example for practice:
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id rutrum nisl. Nam mattis, elit vitae congue aliquet, odio ex suscipit dui, id mollis diam odio eget lacus. Integer ultricies sapien nec ante egestas, non eleifend mauris suscipit. Donec imperdiet nulla enim, id ultrices neque consectetur porta. Donec cursus sollicitudin risus a porta. Phasellus neque ipsum, condimentum id massa a, efficitur bibendum ligula. Fusce pellentesque, ante nec fringilla tincidunt, ligula mi faucibus eros, non facilisis ipsum dolor id elit. Duis vestibulum odio sed justo maximus vehicula. In eu pulvinar enim. In consequat odio quis tortor tincidunt porta.
 Aliquam in porta turpis, sed blandit orci. Mauris quis nisi tempor, convallis lacus quis, luctus diam. Nulla nibh erat, interdum id risus id, pharetra feugiat dolor. Morbi vestibulum odio sed tortor ultricies, vel molestie nisi pretium. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis sapien at enim congue egestas in sit amet sapien. Nunc at eros sapien.
 Suspendisse dignissim est ut arcu placerat euismod. Vestibulum in nulla tellus. Aenean elementum non enim a ultrices. In hac habitasse platea dictumst. Ut eu libero orci. Etiam ac dui id quam bibendum dictum et id erat. Nunc arcu nisl, finibus a accumsan tincidunt, mollis et nulla. Sed ut ipsum id mi luctus laoreet tristique vel ante. In id libero vehicula nisl pellentesque condimentum nec et mi. Ut id fringilla justo. Phasellus tempor, nisl id malesuada congue, turpis urna scelerisque ligula, convallis rutrum metus dolor ac erat. Nunc convallis risus ex, sit amet dapibus risus maximus a. Proin pulvinar a erat vitae facilisis.
@@ -39,23 +44,21 @@ Morbi sit amet luctus turpis. In vitae blandit tortor. Phasellus justo tellus, v
 Proin nec tortor vitae lorem tempus pellentesque. Curabitur consequat, turpis sed tempus lobortis, nibh ipsum finibus magna, at dictum sapien nisl vitae ipsum. Nam vel tortor metus. Aenean iaculis tortor sit amet arcu tempus pulvinar. Aliquam faucibus dignissim scelerisque. Aenean luctus ipsum at felis lobortis, accumsan porta justo dignissim. Cras viverra dapibus est vitae mollis. Aliquam a eleifend nisi. Maecenas est magna, aliquet vel justo non, fermentum dapibus est. Duis eu vestibulum felis, hendrerit lobortis turpis. Maecenas tincidunt ultricies augue id vulputate. Quisque sed ex vel dolor faucibus finibus a eget enim. Cras in leo aliquam, fermentum libero non, molestie libero. Etiam at scelerisque enim. Proin faucibus scelerisque lectus, a dignissim felis consectetur iaculis.
 
 
-### Bases:
+### Basics:
 - Navigation: hjkl
 - Normal mode: escape
-- Insert mode: i/a
+- Insert mode: i/a, I/A
+    - new line insert: o/O
 - Undo: u
 - Redo: <C-r>
 - Replace: r
-- Supprimer un character: x
-- delete a line: dd
-- copy a line: yy -> paste: p
+- Delete a line: dd
+- Copy a line: yy -> paste: p (unnamed register "")
 
 
-### Bases: Vim Motion
-- Word: w/W, b/B
-- End of word: e/E, ge/gE
-- Begin of line: 0
-- End of line: $
+### Vim Motion
+- Word: w/W, b/B, e/E, ge/gE
+- 0, $
 - Begin of first letter: ^
 - Go to first line: gg
 - Go to last line: G
@@ -75,12 +78,12 @@ public class HelloWorld {
 ```
 
 ### Vim Action
-Action = Motion + Operator
+Action = <Count> + Motion + Operator
 
-### Bases: Vim Operator
+### Vim Operator
 - Delete: d
 - Yank (copy): y
-- Change (copy): c
+- Change: c
 - Upper case: gU
 - Lower case: gu
 
@@ -93,6 +96,61 @@ Example:
 - change inside double quotes: ci"
 - visual select around paragraph: vap
 
+- operate on html tag: it/at
+```html
+    <div>oneeee</div>
+    <div>two</div>
+    <div>threeee</div>
+    <div>four not working<\div>
+```
 
 ## Insert Mode
+- Insert text
+- delete a word: <C-w>
+- delete a line: <C-u>
+- delete a character: <C-h>
+- paste yank: <C-r>0
+- addition / substraction: <C-r>=<operation>
+- character decimal code: <C-v>{123}
+    - hexadecimal: <C-v>u{123}
 
+
+## Visual Mode
+Allows you to highlight a specific range of text and then apply a command
+
+### 3 Types:
+- Character visual select: v
+- Line visual select: V
+- Blocks visual select: <C-v>
+
+#### Practice Visual:
+##### Make it pretty
+Chapter        Page
+Normal mode     15
+Insert mode     31
+Visual mode     44
+
+##### Comment all lines
+```python
+def main():
+    print("hello")
+    print("world")
+    print("Christian")
+
+if __name__ == "__main__":
+    main()
+```
+
+##### Add missing ; at en of java program
+```java
+public class Main {
+    public static void main(String args[]) {
+        System.out.println("Hello")
+        System.out.println("World")
+        System.out.println("Christian")
+    }
+}
+```
+
+
+## Command Line Mode
